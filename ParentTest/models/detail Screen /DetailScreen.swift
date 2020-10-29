@@ -12,7 +12,7 @@ import RxCocoa
 //viewcontroller Id --->  detailScreenID
 class DetailScreen: UIViewController {
     
-    var model : CityListModel?
+    var cityid : Int?
     var viewModel : DetailScreenProtocal?
     private let disposeBag = DisposeBag()
     @IBOutlet weak var activityMonitor: UIActivityIndicatorView!
@@ -22,9 +22,9 @@ class DetailScreen: UIViewController {
         super.viewDidLoad()
         viewModel = DetailScreenViewModel()
         
-        if let  item = model
+        if let  item = cityid
         {
-            viewModel?.retriveData(id: item.id ?? 0)
+            viewModel?.retriveData(id: item )
         }
         
         viewModel?.weatherSubject.observeOn(MainScheduler.instance).subscribe(onNext: { (result) in

@@ -13,25 +13,16 @@ import RxCocoa
 
 
 protocol DetailScreenProtocal {
-    
-
-       func retriveData(id : Int)
-        var weatherSubject : PublishSubject <WeatherResult>{ get  }
-        var loadingSubject : BehaviorRelay <Bool>{get}
-
-    
-
+    func retriveData(id : Int)
+    var weatherSubject : PublishSubject <WeatherResult>{ get  }
+    var loadingSubject : BehaviorRelay <Bool>{get}
 }
 
 class DetailScreenViewModel: NSObject, DetailScreenProtocal{
     var weatherSubject: PublishSubject<WeatherResult>
-    
     var loadingSubject: BehaviorRelay<Bool>
-    
-    
-    
     private let disposeBag = DisposeBag()
-
+    
     override init() {
         weatherSubject = PublishSubject <WeatherResult>()
         loadingSubject = BehaviorRelay <Bool>(value: true)
@@ -45,14 +36,14 @@ class DetailScreenViewModel: NSObject, DetailScreenProtocal{
         
         result.subscribe(onNext: { (model) in
             self.loadingSubject.accept(false)
-
+            
             self.weatherSubject.onNext(model)
             
-            }).disposed(by: disposeBag)
-       
+        }).disposed(by: disposeBag)
+        
     }
     
     
-
+    
     
 }

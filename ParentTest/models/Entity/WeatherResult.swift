@@ -14,10 +14,12 @@ struct WeatherResult: Codable, Equatable {
     let visibility: Double?
     let wind: WindModel?
     var name: String?
+    var id: Int?
+
 }
 
 extension WeatherResult {
     static var empty: WeatherResult {
-        return WeatherResult(main: nil, weather: nil, sys: nil, visibility: nil, wind: nil, name: nil)
+        return WeatherResult(main: nil, weather: nil, sys: nil, visibility: nil, wind: nil, name: nil,id: nil)
     }
 }

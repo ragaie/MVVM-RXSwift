@@ -29,12 +29,21 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" rowHeight="97" id="6Tg-Wc-BVH">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" textLabel="3o6-gL-5jJ" rowHeight="97" style="IBUITableViewCellStyleDefault" id="6Tg-Wc-BVH">
                                         <rect key="frame" x="0.0" y="28" width="414" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Tg-Wc-BVH" id="lfa-44-nM2">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="97"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3o6-gL-5jJ">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="97"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -49,9 +58,14 @@
                                 </constraints>
                                 <state key="normal" image="plusicon"/>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="NpQ-TH-1iu">
+                                <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="NpQ-TH-1iu" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="4dx-YV-UWW"/>
+                            <constraint firstItem="NpQ-TH-1iu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="6r2-Cx-9bi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RCW-gb-Png" secondAttribute="trailing" id="FYN-XM-Enh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RCW-gb-Png" secondAttribute="bottom" constant="-48" id="HWx-7x-Hby"/>
                             <constraint firstItem="RCW-gb-Png" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-48" id="Qe2-8e-ckc"/>
@@ -68,6 +82,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityLoader" destination="NpQ-TH-1iu" id="HCC-t8-fpb"/>
                         <outlet property="showSearchScreen" destination="n4z-iT-JN7" id="yZk-ob-00X"/>
                         <outlet property="tablemainScreen" destination="AXg-Zx-5OR" id="8fa-fc-91v"/>
                     </connections>

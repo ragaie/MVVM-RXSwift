@@ -145,13 +145,13 @@
 			children = (
 				DF4DF9C7254AF3A70029BEE2 /* Home screen */,
 				DFE54999254ADF4C009AA4E5 /* detail Screen  */,
-				DFE5498E254AD8BD009AA4E5 /* weather */,
+				DFE5498E254AD8BD009AA4E5 /* Entity */,
 				DFE5499C254AE3DD009AA4E5 /* APIServicelayer.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
 		};
-		DFE5498E254AD8BD009AA4E5 /* weather */ = {
+		DFE5498E254AD8BD009AA4E5 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
 				DFE54993254AD8C9009AA4E5 /* WeatherResult.swift */,
@@ -164,7 +164,7 @@
 				DFE54987254AC58D009AA4E5 /* cityList.json */,
 				DFE5498F254AD8C9009AA4E5 /* SysModel.swift */,
 			);
-			path = weather;
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		DFE54999254ADF4C009AA4E5 /* detail Screen  */ = {
