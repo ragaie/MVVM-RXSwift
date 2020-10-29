@@ -53,6 +53,7 @@ class HomeScreen: UIViewController {
             (index, model : WeatherResult,cell) in
             cell.textLabel?.text = model.name
             
+            cell.detailTextLabel?.text = "\( model.main?.temp_min ?? 0)  - \(model.main?.temp_max ?? 0)"
         }.disposed(by: disposeBag)
         
         tablemainScreen.rx.modelSelected(WeatherResult.self).subscribe(onNext: { (model) in
