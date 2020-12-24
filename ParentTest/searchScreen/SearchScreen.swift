@@ -26,7 +26,6 @@ class SearchScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // selectedCity = PublishRelay<CityListModel>()
-        
         viewModel = SearchScreenViewModel()
         configureBinding()
         // Do any additional setup after loading the view.
@@ -42,25 +41,18 @@ class SearchScreen: UIViewController {
         
         viewModel?.cityListSubject.bind(to: searchResultTableView.rx.items(cellIdentifier: "cellSearchID")){
             (index, model: CityListModel, cell) in
-            
             cell.textLabel?.text = model.name
-            
         }.disposed(by: disposeBag)
         
         dismissScreen.rx.tap.subscribe(onNext: { () in
-            
             self.dismiss(animated: true, completion: nil)
         }).disposed(by: disposeBag)
         
-        
         searchResultTableView.rx.modelSelected(CityListModel.self).subscribe(onNext: { [weak self ] model in
             self?.dismiss(animated: true, completion: nil)
-            
             self?.selectedCity.accept(model)
             print(model)
-            
         }).disposed(by: disposeBag)
-        
         
     }
     

@@ -57,7 +57,6 @@ class HomeScreen: UIViewController {
         }.disposed(by: disposeBag)
         
         tablemainScreen.rx.modelSelected(WeatherResult.self).subscribe(onNext: { (model) in
-            
             let vc : DetailScreen = (self.storyboard?.instantiateViewController(identifier: "detailScreenID"))!
             vc.cityid = model.id
             self.present(vc, animated: true, completion: nil)
