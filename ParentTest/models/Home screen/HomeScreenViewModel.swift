@@ -82,7 +82,7 @@ class HomeScreenViewModel: NSObject ,HomeScreenProtocal{
     
     func retriveData(dataString : String){
         loadingSubject.accept(true)
-        let urlStr = "http://api.openweathermap.org/data/2.5/weather?\(dataString)&appid=2aa3ec79aa77894f9e0f127db16bcb25"
+        let urlStr = "http://api.openweathermap.org/data/2.5/weather?\(dataString)&appid=<you app id>"
         let result : Observable<WeatherResult> = APIServicelayer.shared.send(apiurl: urlStr, way: RequestType.GET)
         
         result.subscribe(onNext: { (model) in
